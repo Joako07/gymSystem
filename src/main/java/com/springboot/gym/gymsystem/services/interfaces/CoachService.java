@@ -6,7 +6,7 @@ import com.springboot.gym.gymsystem.models.dtos.CoachDto;
 
 public interface CoachService {
 
-    public CoachDto creatCoach(CoachDto coachDto);
+    public CoachDto createCoach(CoachDto coachDto);
 
     public CoachDto getCoach (long id);
 

@@ -6,6 +6,7 @@ import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.springboot.gym.gymsystem.models.enums.MembershipTypeEnum;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -41,7 +42,7 @@ public class ClientEntity {
     @Column(nullable = false)
     private MembershipTypeEnum type;
 
-    @ManyToMany(fetch = FetchType.EAGER) 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
                 name="client_class",
                 joinColumns = @JoinColumn(name = "client_id"),

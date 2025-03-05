@@ -42,7 +42,7 @@ public class ProductController {
     
     @PostMapping
     public ResponseEntity<ProductDto> creatProduct(@RequestBody ProductDto productDto) {
-        return new ResponseEntity<>(productService.creatProduct(productDto), HttpStatus.CREATED);
+        return new ResponseEntity<>(productService.createProduct(productDto), HttpStatus.CREATED);
     }
     
     @PutMapping("/{id}")

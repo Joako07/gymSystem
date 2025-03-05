@@ -6,7 +6,7 @@ import com.springboot.gym.gymsystem.models.dtos.ClientDto;
 
 public interface ClientService {
 
-    public ClientDto creatClient(ClientDto clientDto);
+    public ClientDto createClient(ClientDto clientDto);
 
     public Page<ClientDto> getAllClient(int pageNumber, int sizePage, String orderBy, String sortDir);
 

@@ -22,11 +22,15 @@ public class ClassMapper {
         ClassEntity classEntity = modelMapper.map(classDto, ClassEntity.class);
         return classEntity;
     }
-
-    //Convertir de Entidad a DTO
-    public static ClassDto entityToDto(ClassEntity classEntity){
-        ClassDto classDto = modelMapper.map(classEntity, ClassDto.class);
-        return classDto;
-    }
-
+    
+ 
+   public static ClassDto entityToDto(ClassEntity classEntity){
+       return ClassDto.builder()
+        .id(classEntity.getId())
+        .activity(classEntity.getActivity())
+        .days(classEntity.getDays())
+        .startClass(classEntity.getStartClass())
+        .endTime(classEntity.getEndTime())
+        .build();
+   }
 }

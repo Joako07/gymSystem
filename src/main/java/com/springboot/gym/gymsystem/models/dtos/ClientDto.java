@@ -1,5 +1,7 @@
 package com.springboot.gym.gymsystem.models.dtos;
 
+import java.util.Set;
+
 import com.springboot.gym.gymsystem.models.enums.MembershipTypeEnum;
 
 import lombok.AllArgsConstructor;
@@ -18,4 +20,5 @@ public class ClientDto {
     private String lastName;
     private String cellphone;
     private MembershipTypeEnum type;
+    private Set<ClassDto> classes;
 }

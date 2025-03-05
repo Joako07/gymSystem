@@ -21,4 +21,5 @@ public class ClassDto {
     private Set<DaysEnum> days;
     private LocalTime startClass;
     private LocalTime endTime;
+    private Set<ClientDto> clients;
 }

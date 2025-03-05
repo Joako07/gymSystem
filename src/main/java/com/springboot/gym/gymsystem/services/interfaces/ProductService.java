@@ -6,7 +6,7 @@ import com.springboot.gym.gymsystem.models.dtos.ProductDto;
 
 public interface ProductService {
 
-    public ProductDto creatProduct (ProductDto productDto);
+    public ProductDto createProduct (ProductDto productDto);
 
     public ProductDto getProduct (long id);
 

@@ -43,7 +43,7 @@ public class ClientController {
     
     @PostMapping
     public ResponseEntity<ClientDto> creatClient(@RequestBody ClientDto clientDto) {
-        return new ResponseEntity<>(clientService.creatClient(clientDto), HttpStatus.CREATED);
+        return new ResponseEntity<>(clientService.createClient(clientDto), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")

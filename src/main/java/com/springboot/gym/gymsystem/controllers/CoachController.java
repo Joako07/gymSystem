@@ -43,7 +43,7 @@ public class CoachController {
 
     @PostMapping
     public ResponseEntity<CoachDto> creatCoach(@RequestBody CoachDto coachDto) {
-        return new ResponseEntity<>(coachService.creatCoach(coachDto),HttpStatus.CREATED);
+        return new ResponseEntity<>(coachService.createCoach(coachDto),HttpStatus.CREATED);
     }
     
     @PutMapping("/{id}")

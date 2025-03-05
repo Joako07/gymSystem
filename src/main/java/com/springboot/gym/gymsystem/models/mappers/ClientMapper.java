@@ -23,10 +23,11 @@ public class ClientMapper {
         return clientEntity;
      }
 
-     //Convertir de Entidad a DTO
+    // Convertir de Entidad a DTO
      public static ClientDto entityToDto(ClientEntity clientEntity){
         ClientDto clientDto = modelMapper.map(clientEntity, ClientDto.class);
         return clientDto;
      }
+      
 
 }
