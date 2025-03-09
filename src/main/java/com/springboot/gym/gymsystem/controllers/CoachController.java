@@ -12,6 +12,8 @@ import com.springboot.gym.gymsystem.models.dtos.CoachDto;
 import com.springboot.gym.gymsystem.services.interfaces.CoachService;
 import com.springboot.gym.gymsystem.utilities.Constants;
 
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -42,12 +44,12 @@ public class CoachController {
     }
 
     @PostMapping
-    public ResponseEntity<CoachDto> creatCoach(@RequestBody CoachDto coachDto) {
+    public ResponseEntity<CoachDto> creatCoach(@Valid @RequestBody CoachDto coachDto) {
         return new ResponseEntity<>(coachService.createCoach(coachDto),HttpStatus.CREATED);
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<CoachDto> updateCoach(@PathVariable Long id, @RequestBody CoachDto coachDto) {
+    public ResponseEntity<CoachDto> updateCoach(@PathVariable Long id,@Valid @RequestBody CoachDto coachDto) {
         return new ResponseEntity<>(coachService.updateChoach(id, coachDto), HttpStatus.OK);
     }
 

@@ -70,7 +70,7 @@ public class CoachServiceImpl implements CoachService {
                 .orElseThrow(() -> new NotFoundApiException("404 Not Found - Coach with ID " + id + " not found",
                         "No se encontro el coach con el Id " + id));
 
-        coachEntity.setId(coachDto.getId());
+        coachEntity.setId(id);
         coachEntity.setName(coachDto.getName());
         coachEntity.setLastName(coachDto.getLastName());
 

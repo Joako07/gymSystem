@@ -12,6 +12,8 @@ import com.springboot.gym.gymsystem.models.dtos.ProductDto;
 import com.springboot.gym.gymsystem.services.interfaces.ProductService;
 import com.springboot.gym.gymsystem.utilities.Constants;
 
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,12 +43,12 @@ public class ProductController {
     }
     
     @PostMapping
-    public ResponseEntity<ProductDto> creatProduct(@RequestBody ProductDto productDto) {
+    public ResponseEntity<ProductDto> creatProduct(@Valid @RequestBody ProductDto productDto) {
         return new ResponseEntity<>(productService.createProduct(productDto), HttpStatus.CREATED);
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<ProductDto> updateProduct(@PathVariable Long id, @RequestBody ProductDto productDto) {     
+    public ResponseEntity<ProductDto> updateProduct(@PathVariable Long id,@Valid @RequestBody ProductDto productDto) {     
         return new ResponseEntity<>(productService.updateProductDto(id, productDto), HttpStatus.OK);
     }
 

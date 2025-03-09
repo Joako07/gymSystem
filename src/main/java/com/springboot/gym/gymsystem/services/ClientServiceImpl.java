@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.springboot.gym.gymsystem.exceptions.ApiErrorException;
-import com.springboot.gym.gymsystem.exceptions.MethodArgumentTypeMismatchException;
 import com.springboot.gym.gymsystem.exceptions.NotFoundApiException;
 import com.springboot.gym.gymsystem.models.dtos.ClientDto;
 import com.springboot.gym.gymsystem.models.entities.ClassEntity;
@@ -96,7 +95,7 @@ public class ClientServiceImpl implements ClientService {
         .orElseThrow(() -> new NotFoundApiException("404 Not Found - Client with ID " + id + " not found",
             "No se encontro el cliente con el Id " + id));
 
-    clientEntity.setId(clientDto.getId());
+    clientEntity.setId(id);
     clientEntity.setName(clientDto.getName());
     clientEntity.setLastName(clientDto.getLastName());
     clientEntity.setCellphone(clientDto.getCellphone());

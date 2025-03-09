@@ -12,6 +12,8 @@ import com.springboot.gym.gymsystem.models.dtos.ClassDto;
 import com.springboot.gym.gymsystem.services.interfaces.ClassService;
 import com.springboot.gym.gymsystem.utilities.Constants;
 
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,12 +45,12 @@ public class ClassController {
     }
     
     @PostMapping
-    public ResponseEntity<ClassDto> creatClass(@RequestBody ClassDto classDto) {
+    public ResponseEntity<ClassDto> creatClass(@Valid @RequestBody ClassDto classDto) {
         return new ResponseEntity<>(classService.createClass(classDto), HttpStatus.CREATED);
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<ClassDto> updateClass(@PathVariable Long id, @RequestBody ClassDto classDto) {
+    public ResponseEntity<ClassDto> updateClass(@PathVariable Long id,@Valid @RequestBody ClassDto classDto) {
         return new ResponseEntity<>(classService.updateClass(classDto, id), HttpStatus.OK);
     }
 

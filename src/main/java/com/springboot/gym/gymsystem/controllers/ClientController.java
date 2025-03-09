@@ -12,6 +12,8 @@ import com.springboot.gym.gymsystem.models.dtos.ClientDto;
 import com.springboot.gym.gymsystem.services.interfaces.ClientService;
 import com.springboot.gym.gymsystem.utilities.Constants;
 
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -42,12 +44,12 @@ public class ClientController {
     }
     
     @PostMapping
-    public ResponseEntity<ClientDto> creatClient(@RequestBody ClientDto clientDto) {
+    public ResponseEntity<ClientDto> creatClient(@Valid @RequestBody ClientDto clientDto) {
         return new ResponseEntity<>(clientService.createClient(clientDto), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ClientDto> updateClient(@PathVariable Long id, @RequestBody ClientDto clientDto) {   
+    public ResponseEntity<ClientDto> updateClient(@PathVariable Long id,@Valid @RequestBody ClientDto clientDto) {   
         return new ResponseEntity<>(clientService.updateClient(id, clientDto),HttpStatus.OK);
     }
 

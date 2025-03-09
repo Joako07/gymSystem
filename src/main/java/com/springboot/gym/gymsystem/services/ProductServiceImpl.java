@@ -72,7 +72,7 @@ public class ProductServiceImpl implements ProductService {
                   "404 Not Found - Product with ID " + id + " not found",
                   "No se encontro el producto con el Id " + id));
 
-      productEntity.setId(productDto.getId());
+      productEntity.setId(id);
       productEntity.setName(productDto.getName());
       productEntity.setPrice(productDto.getPrice());
 
