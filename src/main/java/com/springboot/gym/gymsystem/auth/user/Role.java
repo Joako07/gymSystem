@@ -1,0 +1,8 @@
+package com.springboot.gym.gymsystem.auth.user;
+
+public enum Role {
+
+    ROLE_ADMIN,
+    ROLE_USER,
+
+}
